@@ -198,7 +198,7 @@ The app is deployed on **Vercel** from the `main` branch of this repository:
 
 1. Import the GitHub repo in Vercel (framework preset: Next.js, no build overrides needed).
 2. Add `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` for Production (and Preview).
-3. Deploy. Every push to `main` redeploys automatically.
+3. Deploy. Every push to `main` redeploys automatically (the Vercel GitHub app must have access to this repository).
 4. In Supabase → Authentication → URL Configuration, set the Site URL to the Vercel URL.
 
 Verify the deployment end-to-end:
