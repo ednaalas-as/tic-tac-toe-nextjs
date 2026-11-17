@@ -1,0 +1,28 @@
+.field {
+  display: grid;
+  gap: 6px;
+}
+
+.label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+
+.input {
+  min-height: 60px;
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.input::placeholder {
+  color: var(--line-strong);
+}
+
+.input[aria-invalid] {
+  border-color: var(--danger);
+}

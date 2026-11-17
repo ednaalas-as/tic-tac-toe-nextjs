@@ -1,0 +1,27 @@
+.panel {
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+.text {
+  font-size: 1rem;
+}
+
+.timer {
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.error {
+  color: var(--danger);
+  font-weight: 600;
+  font-size: 0.92rem;
+}

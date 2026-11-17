@@ -1,0 +1,32 @@
+.notice {
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: var(--surface-2);
+  color: var(--danger);
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+.aside {
+  display: grid;
+  gap: 12px;
+}
+
+.symbolEdit {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.symbolEdit summary {
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.symbolBody {
+  padding: 0 16px 16px;
+}
