@@ -1,0 +1,36 @@
+.player {
+  --accent: var(--p1);
+  display: grid;
+  gap: 16px;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--accent);
+  border-radius: var(--radius);
+  background: var(--surface);
+  min-width: 0;
+}
+
+.p2 {
+  --accent: var(--p2);
+}
+
+.heading {
+  font-size: 1.15rem;
+}
+
+.field {
+  display: grid;
+  gap: 6px;
+}
+
+.label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+
+@media (max-width: 420px) {
+  .player {
+    padding: 16px;
+  }
+}

@@ -1,0 +1,131 @@
+.card {
+  --accent: var(--p1);
+  --accent-soft: var(--p1-soft);
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  padding: 10px 14px 10px 10px;
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s var(--ease-out);
+}
+
+.p2 {
+  --accent: var(--p2);
+  --accent-soft: var(--p2-soft);
+}
+
+.turn {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.winner {
+  border-color: var(--win);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--win) 25%, transparent);
+}
+
+.avatar {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--accent-soft);
+}
+
+.info {
+  display: grid;
+  min-width: 0;
+}
+
+.name {
+  font-weight: 700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 8px;
+  min-height: 1.25rem;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.tag {
+  font-weight: 600;
+}
+
+.warning {
+  color: var(--danger);
+}
+
+.turnLabel {
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.winner .turnLabel {
+  color: var(--win);
+}
+
+.activity {
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.activity::after {
+  content: "";
+  display: inline-block;
+  width: 1.2em;
+  text-align: left;
+  animation: dots 1.2s steps(4) infinite;
+}
+
+.score {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+@keyframes dots {
+  0% { content: ""; }
+  25% { content: "."; }
+  50% { content: ".."; }
+  75% { content: "..."; }
+}
+
+@media (max-width: 560px) {
+  .card {
+    grid-template-columns: auto 1fr;
+    grid-template-areas:
+      "avatar score"
+      "info info";
+    padding: 10px;
+    gap: 6px 8px;
+  }
+
+  .avatar {
+    grid-area: avatar;
+    width: 40px;
+    height: 40px;
+  }
+
+  .info {
+    grid-area: info;
+  }
+
+  .score {
+    grid-area: score;
+    justify-self: end;
+    font-size: 1.6rem;
+  }
+}

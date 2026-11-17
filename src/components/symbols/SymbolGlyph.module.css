@@ -1,0 +1,55 @@
+.glyph {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  line-height: 1;
+}
+
+.sm { width: 1.25em; height: 1.25em; font-size: 1rem; }
+.md { width: 1.75em; height: 1.75em; font-size: 1.25rem; }
+.lg { width: 2.25em; height: 2.25em; font-size: 1.75rem; }
+.board { width: 70%; height: 70%; font-size: clamp(2.2rem, 13vw, 4.4rem); }
+
+.emoji {
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+  font-size-adjust: none;
+}
+
+.sm.emoji { font-size: 1rem; }
+.md.emoji { font-size: 1.35rem; }
+.lg.emoji { font-size: 2rem; }
+
+.stroke {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 11;
+  stroke-linecap: round;
+}
+
+.p1 { color: var(--p1); }
+.p2 { color: var(--p2); }
+.ink { color: var(--ink); }
+
+.animate .stroke {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: draw 0.28s var(--ease-out) forwards;
+}
+
+.animate .second {
+  animation-delay: 0.12s;
+}
+
+.animate.emoji {
+  animation: pop 0.32s var(--ease-out);
+}
+
+@keyframes draw {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes pop {
+  from { transform: scale(0.4); opacity: 0; }
+  60% { transform: scale(1.12); opacity: 1; }
+  to { transform: scale(1); }
+}

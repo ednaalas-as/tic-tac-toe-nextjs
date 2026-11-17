@@ -1,0 +1,114 @@
+.picker {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+}
+
+.picker:disabled {
+  opacity: 0.55;
+}
+
+.legend {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 0;
+  margin-bottom: 10px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+
+.current {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.groups {
+  display: grid;
+  gap: 10px;
+}
+
+.group {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  align-items: center;
+  gap: 8px;
+}
+
+.category {
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.option {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1.5px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface);
+  transition: transform 0.15s var(--ease-out), border-color 0.15s ease, background 0.15s ease;
+}
+
+.option:hover:not([aria-disabled]) {
+  border-color: var(--line-strong);
+  transform: translateY(-1px);
+}
+
+.selected {
+  border-width: 2px;
+}
+
+.selected.p1 {
+  border-color: var(--p1);
+  background: var(--p1-soft);
+}
+
+.selected.p2 {
+  border-color: var(--p2);
+  background: var(--p2-soft);
+}
+
+.taken {
+  cursor: not-allowed;
+  opacity: 0.35;
+  filter: grayscale(1);
+}
+
+/* Diagonal strike so "unavailable" isn't conveyed by opacity alone. */
+.lock {
+  position: absolute;
+  inset: 8px;
+  background: linear-gradient(
+    to top right,
+    transparent calc(50% - 1px),
+    var(--ink) calc(50% - 1px),
+    var(--ink) calc(50% + 1px),
+    transparent calc(50% + 1px)
+  );
+}
+
+@media (max-width: 420px) {
+  .group {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+}

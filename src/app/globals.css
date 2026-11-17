@@ -1,0 +1,198 @@
+/* ==========================================================================
+   Triad — design tokens and base styles
+   Warm paper + ink, with one accent per seat. Dark theme mirrors the palette.
+   ========================================================================== */
+
+:root {
+  --bg: #f6f2eb;
+  --surface: #fffdf9;
+  --surface-2: #efe9df;
+  --ink: #1f1c18;
+  --ink-soft: #3d3832;
+  --muted: #6b645b;
+  --line: #e1d9cc;
+  --line-strong: #cfc4b3;
+
+  --p1: #d9482b;        /* vermilion */
+  --p1-soft: #f8ddd3;
+  --p2: #17707f;        /* deep teal */
+  --p2-soft: #d3ebee;
+  --win: #b88a12;
+  --danger: #b3261e;
+  --ok: #2e7d4f;
+
+  --focus: #2457d6;
+  --shadow: 0 1px 2px rgb(31 28 24 / 6%), 0 8px 24px rgb(31 28 24 / 6%);
+
+  --radius-sm: 8px;
+  --radius: 14px;
+  --radius-lg: 22px;
+
+  --font-display: var(--font-fraunces), Georgia, serif;
+  --font-body: var(--font-inter), system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --page-gutter: clamp(16px, 4vw, 40px);
+
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #141311;
+    --surface: #1d1b18;
+    --surface-2: #262320;
+    --ink: #f2ede5;
+    --ink-soft: #d6cfc4;
+    --muted: #a39b8f;
+    --line: #322e29;
+    --line-strong: #46403a;
+    --p1: #ff7650;
+    --p1-soft: #3b2219;
+    --p2: #4fbccc;
+    --p2-soft: #15313a;
+    --win: #e5b93a;
+    --danger: #ff8a80;
+    --ok: #6fcf97;
+    --focus: #8fb0ff;
+    --shadow: 0 1px 2px rgb(0 0 0 / 30%), 0 8px 24px rgb(0 0 0 / 25%);
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #141311;
+  --surface: #1d1b18;
+  --surface-2: #262320;
+  --ink: #f2ede5;
+  --ink-soft: #d6cfc4;
+  --muted: #a39b8f;
+  --line: #322e29;
+  --line-strong: #46403a;
+  --p1: #ff7650;
+  --p1-soft: #3b2219;
+  --p2: #4fbccc;
+  --p2-soft: #15313a;
+  --win: #e5b93a;
+  --danger: #ff8a80;
+  --ok: #6fcf97;
+  --focus: #8fb0ff;
+  --shadow: 0 1px 2px rgb(0 0 0 / 30%), 0 8px 24px rgb(0 0 0 / 25%);
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Shared input style */
+.text-input {
+  width: 100%;
+  min-height: 48px;
+  padding: 10px 14px;
+  border: 1.5px solid var(--line-strong);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: var(--ink);
+  transition: border-color 0.15s ease;
+}
+
+.text-input:hover {
+  border-color: var(--muted);
+}
+
+.text-input:focus-visible {
+  outline-offset: 1px;
+  border-color: var(--focus);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.skip-link {
+  position: absolute;
+  left: 12px;
+  top: -60px;
+  z-index: 100;
+  padding: 10px 14px;
+  background: var(--ink);
+  color: var(--bg);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.skip-link:focus {
+  top: 12px;
+}
