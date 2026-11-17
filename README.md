@@ -4,7 +4,7 @@ A polished tic-tac-toe app built with **Next.js (App Router), React, TypeScript 
 Play against the computer, with a friend on the same device, or online in a private room — with
 your own name and symbol (hearts, moons, foxes… not just X and O).
 
-**Live app:** _set after deployment — see [Deployment](#deployment)_
+**Live app:** https://tic-tac-toe-nextjs-brown.vercel.app
 
 ---
 
@@ -204,8 +204,10 @@ The app is deployed on **Vercel** from the `main` branch of this repository:
 Verify the deployment end-to-end:
 
 ```bash
-E2E_BASE_URL=https://<your-app>.vercel.app npm run test:e2e
+E2E_BASE_URL=https://tic-tac-toe-nextjs-brown.vercel.app npm run test:e2e
 ```
+
+This suite (including the two-browser online match) passes against the production URL above.
 
 ---
 
